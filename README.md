@@ -20,6 +20,21 @@ A modern chat interface for AgentOS built with Next.js, Tailwind CSS, and TypeSc
 - **Main Branch**: Supports Agno v2.x (recommended)
 - **v1 Branch**: Supports Agno v1.x for legacy compatibility
 
+## Project Components
+
+This repository contains two main parts:
+
+1. **Agent UI** (Main Next.js Application) - The frontend chat interface
+2. **AgentOS + OpenRouter Integration** (Python Service) - Located in `myagent1` directory, provides an AgentOS service with Qwen model integration
+
+### AgentOS + OpenRouter Integration Features
+
+- ✅ **Qwen Model Integration**: Using Qwen/qwen-plus-2025-07-28 through OpenRouter API
+- ✅ **Streaming Responses**: Real-time AI response streaming
+- ✅ **Parameter Compatibility**: Automatic filtering of unsupported parameters
+- ✅ **Environment Configuration**: dotenv-based configuration loading
+- ✅ **Service Status**: Running at http://localhost:7777
+
 ## Getting Started
 
 ### Prerequisites
@@ -56,6 +71,42 @@ pnpm install
 ```bash
 pnpm dev
 ```
+
+### AgentOS Service Setup
+
+1. Navigate to the service directory:
+
+```bash
+cd myagent1
+```
+
+2. Configure your OpenRouter API key in the `.env` file:
+
+```bash
+OPENROUTER_API_KEY=your_api_key_here
+```
+
+3. Install Python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Start the AgentOS service:
+
+```bash
+python myfrsit.py
+```
+
+The service will start running at http://localhost:7777
+
+## Development
+
+To contribute to this project, please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
